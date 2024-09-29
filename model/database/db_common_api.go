@@ -5,7 +5,7 @@ import (
 )
 
 type DbCommonApi struct {
-	base.ORMBaseModel
+	base.ORMBase
 	Name    string
 	Url     string
 	Method  string

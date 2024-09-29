@@ -3,7 +3,7 @@ package database
 import "github.com/light-chaser/server/model/database/base"
 
 type DbRemoteComponent struct {
-	base.ORMBaseModel
+	base.ORMBase
 	ComponentName string `gorm:"component_name"`
 	Url           string `gorm:"url"`
 }

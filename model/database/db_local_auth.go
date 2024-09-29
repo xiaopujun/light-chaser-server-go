@@ -3,7 +3,7 @@ package database
 import "github.com/light-chaser/server/model/database/base"
 
 type DbLocalAuth struct {
-	base.ORMBaseModel
+	base.ORMBase
 	Password string `gorm:"password"`
 	UserId   int64  `gorm:"user_id"`
 }

@@ -3,7 +3,7 @@ package database
 import "github.com/light-chaser/server/model/database/base"
 
 type DbFile struct {
-	base.ORMBaseModel
+	base.ORMBase
 	Name      string `gorm:"name"`
 	Url       string `gorm:"url"`
 	Type      int    `gorm:"type"`

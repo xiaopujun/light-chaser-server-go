@@ -3,7 +3,7 @@ package database
 import "github.com/light-chaser/server/model/database/base"
 
 type DbProjectRelease struct {
-	base.ORMBaseModel
+	base.ORMBase
 	Name           string `gorm:"name"`
 	State          int    `gorm:"state"`
 	Encrypt        bool   `gorm:"encrypt"`

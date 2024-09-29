@@ -7,7 +7,7 @@ import (
 )
 
 func GetProjectList(c *gin.Context) {
-	var project database.Project
+	var project database.DbProject
 	global.LC_DB.First(&project, 27)
 	c.JSON(200, gin.H{
 		"msg":  "project list 大牛逼",
