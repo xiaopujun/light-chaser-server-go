@@ -1,11 +1,11 @@
 package main
 
 import (
-	gin "github.com/gin-gonic/gin"
+	"github.com/light-chaser/server/config"
 	"github.com/light-chaser/server/db"
 	"github.com/light-chaser/server/global"
 	"github.com/light-chaser/server/log"
-	"github.com/light-chaser/server/router"
+	"github.com/light-chaser/server/server"
 )
 
 //go:generate go env -w GO111MODULE=on
@@ -14,18 +14,12 @@ import (
 //go:generate go mod download
 
 func main() {
-	engine := gin.Default()
-	//初始化环境配置
 	//初始化日志
 	global.LC_LOG = log.InitLogger()
+	//初始化环境配置
+	global.LC_ENV = config.LoadEvn()
 	//初始化数据库连接
-	db.InitDataBase()
-	//注册路由
-	router.RegisterRouters(engine)
+	global.LC_DB = db.InitDatabase()
 	//启动服务
-	err := engine.Run(":8888")
-	if err != nil {
-		return
-	}
-
+	server.RunServer()
 }

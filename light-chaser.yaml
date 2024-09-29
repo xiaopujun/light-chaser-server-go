@@ -1,0 +1,20 @@
+database:
+  host: localhost
+  port: 3306
+  username: root
+  password: 123456
+  schema: light_chaser_server
+
+server:
+  port: 8080
+  mode: debug
+
+#file_max_size: 5MB
+#image_max_size: 5KB
+root_path: D:/project/light-chaser-server
+image_path: /image
+cover_path: /cover
+avatar_path: /avatar
+remote_component_path: /component
+license_path: C:/Users/DAGU/Desktop/license
+test_database_max_timeout: 5000
